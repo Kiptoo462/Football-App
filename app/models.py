@@ -10,6 +10,7 @@ class User(UserMixin,db.Model):
     username=db.Column(db.String(255),index=True)
     email= db.Column(db.String(50),unique=True,index=True)
     encryptedpassword= db.Column(db.String(200),index=True)
+    favourite_team= db.Column(db.String(50),index=True)
     
     @property
     def password(self):

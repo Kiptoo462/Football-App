@@ -1,11 +1,12 @@
-from flask import render_template, flash, redirect, request, url_for
+from flask import Blueprint, render_template, flash, redirect, request, url_for, abort
 from flask_login import login_required, login_user, logout_user,current_user
+from .. import main
+from app import db
 
 
 from . import auth
 from ..models import User
-from .forms import RegistrationForm, LoginForm
-from .. import db
+from .forms import RegistrationForm, LoginForm, UpdateProfile
 from ..email import welcome_message
 
 @auth.route('/signup', methods=['GET', 'POST'])
@@ -56,10 +57,36 @@ def logout():
     return redirect(url_for('main.index'))
 
 
-@auth.route('/profile')
+@auth.route('/profile', methods = ['POST','GET'])
 @login_required
 def profile():
-    
+    user = current_user
+    user_id = current_user._get_current_object().id
+
+    if user is None:
+        abort(404)
+
     title = "Profile"
 
-    return render_template('auth/profile.html', title=title)
+    return render_template('auth/profile.html', title=title, user=user)
+
+
+@auth.route('/profile/update',methods = ['GET','POST'])
+@login_required
+def update_profile():
+    user = current_user
+
+    if user is None:
+        abort(404)
+
+    form = UpdateProfile()
+
+    if form.validate_on_submit():
+        user.favourite_team = form.favourite_team.data
+
+        db.session.add(user)
+        db.session.commit()
+
+        return redirect(url_for('auth.profile',))
+
+    return render_template('auth/update.html',form =form)

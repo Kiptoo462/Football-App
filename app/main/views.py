@@ -1,7 +1,8 @@
 from flask import Blueprint, request, render_template,redirect,url_for,abort
 from flask_login import login_required
-from .import main
+from . import main
 from app import db
+from ..models import User
 
 
 @main.route('/')

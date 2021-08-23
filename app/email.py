@@ -1,7 +1,7 @@
 from flask import render_template
 from flask_mail import Message
 
-#from . import mail
+from . import mail
 
 
 def welcome_message(subject, template, to, **kwargs):
