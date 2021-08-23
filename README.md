@@ -36,4 +36,4 @@ A python application that is designed to consume the ‘Football-data’ API, an
 - App is still in development.
 
 # Known Bugs
--
+- Google restrictions on Third-party applications prevent the dispatch of welcome emails.
