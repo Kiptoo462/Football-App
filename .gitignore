@@ -1,0 +1,8 @@
+virtual/
+*.pyc
+instance
+.env
+env/
+venv/
+ENV/
+dist/
