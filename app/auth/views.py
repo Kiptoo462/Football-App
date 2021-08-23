@@ -3,7 +3,6 @@ from flask_login import login_required, login_user, logout_user,current_user
 from .. import main
 from app import db
 
-
 from . import auth
 from ..models import User
 from .forms import RegistrationForm, LoginForm, UpdateProfile
@@ -89,4 +88,4 @@ def update_profile():
 
         return redirect(url_for('auth.profile',))
 
-    return render_template('auth/update.html',form =form)
+    return render_template('auth/update.html', UpdateProfile=form)

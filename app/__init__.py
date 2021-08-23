@@ -32,4 +32,9 @@ def create_app(config_name):
     from .auth import auth as auth_blueprint
     app.register_blueprint(auth_blueprint, url_prefix='/auth')
 
+
+    #@login_manager.user_loader
+    #def load_user(user_id):
+        #user = User.query.filter_by(id=user_id).first()
+
     return app

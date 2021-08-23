@@ -1,5 +1,3 @@
-export GF_API_KEY=''
-
 export MAIL_USERNAME='test.user.python3.6@gmail.com'
 export MAIL_PASSWORD='codingstudent'
 export SECRET_KEY='secret_key'
