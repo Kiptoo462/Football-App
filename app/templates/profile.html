@@ -1,0 +1,19 @@
+{% extends 'base.html'%}
+
+{% block content %}
+
+<br>
+<h1 style="text-align:center"><b> My Profile </b></h1>
+<br>
+<div class="container">
+    <div class="row">
+        <div>
+            <h2><b>Username: {{ user.username| capitalize}} </b></h2>
+            <br>
+            <h4><b>Email address: {{ user.email}} </b></h4>
+        </div>
+    </div>
+</div>
+<hr>
+
+{% endblock %}
