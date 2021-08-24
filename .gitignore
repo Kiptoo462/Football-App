@@ -1,6 +1,6 @@
 virtual/
 *.pyc
-instance
+instance/
 .env
 env/
 venv/
