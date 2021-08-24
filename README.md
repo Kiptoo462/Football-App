@@ -33,7 +33,7 @@ A python application that is designed to consume the ‘Football-data’ API, an
 - Heroku
 
 # Live Page
-- App is still in development.
+- Live page at https://global-football.herokuapp.com/
 
 # Known Bugs
-- Google restrictions on Third-party applications prevent the dispatch of welcome emails.
+-
