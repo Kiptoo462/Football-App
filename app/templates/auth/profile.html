@@ -9,16 +9,7 @@
     <div class="row">
         <div class="container">
             <h4><b>Email address: {{ user.email}} </b></h4>
-            <br>
-            <h4><b>Favourite Team: {{ user.favourite_team}} </b></h4>
-            <br>
         </div>
-    </div>
-    <br>
-    <div class="container">
-        {% if user == current_user %}
-        <a href="{{url_for('auth.update_profile')}}">Update your profile</a>
-        {% endif %}
     </div>
 </div>
 <hr>

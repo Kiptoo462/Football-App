@@ -26,7 +26,3 @@ class LoginForm(FlaskForm):
     password=PasswordField('Enter your password..',validators=[Required()])
     remember=BooleanField('Remember me')
     submit=SubmitField('Login')
-
-class UpdateProfile(FlaskForm):
-    favourite_team = TextAreaField('Choose your favourite team..',validators = [Required()])
-    submit = SubmitField('Submit')

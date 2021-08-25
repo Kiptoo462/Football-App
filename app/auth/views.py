@@ -5,7 +5,7 @@ from app import db
 
 from . import auth
 from ..models import User
-from .forms import RegistrationForm, LoginForm, UpdateProfile
+from .forms import RegistrationForm, LoginForm
 from ..email import welcome_message
 
 @auth.route('/signup', methods=['GET', 'POST'])
@@ -68,24 +68,3 @@ def profile():
     title = "Profile"
 
     return render_template('auth/profile.html', title=title, user=user)
-
-
-@auth.route('/profile/update',methods = ['GET','POST'])
-@login_required
-def update_profile():
-    user = current_user
-
-    if user is None:
-        abort(404)
-
-    form = UpdateProfile()
-
-    if form.validate_on_submit():
-        user.favourite_team = form.favourite_team.data
-
-        db.session.add(user)
-        db.session.commit()
-
-        return redirect(url_for('auth.profile',))
-
-    return render_template('auth/update.html', UpdateProfile=form)
