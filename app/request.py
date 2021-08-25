@@ -19,3 +19,17 @@ def get_competition():
     response = requests.request("GET", url)
     
     print(response.text)
+
+    with urllib.request.urlopen(url) as url:
+        competition_details_data = url.read()
+        competition_details_response = json.loads(competition_details_data)
+
+        competition_object = None
+        if competition_details_response:
+            id = competition_details_response.get('id')
+            name = competition_details_response.get('name')
+            plan = competition_details_response.get('plan')
+
+            competition_object = Competition(id,name,plan)
+
+    return competition_object
