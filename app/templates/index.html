@@ -1,4 +1,5 @@
 {% extends "base.html" %}
+{% import 'macros.html' as macro%}
 {%block content%}
 <br>
 <div class="container">
@@ -6,6 +7,13 @@
         <h1><b> Global Football </b></h1>
         <br>
         <h4><i> *API stuff goes here..* </i></h4>
+    </div>
+    <br>
+    <hr>
+    <br>
+    <div class="container">
+        <h4 style="text-align: center"> Active Competitions </h4>
+        {{macro.displayCompetitionList()}}
     </div>
 </div>
 {% endblock %}

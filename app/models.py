@@ -30,3 +30,17 @@ class User(UserMixin,db.Model):
 
     def __repr__(self):
         return f'User{self.username}'
+
+
+class Competition:
+    
+    all_competitions = []
+    
+    def __init__(self,id,name,plan):
+        self.id = id
+        self.name = name
+        self.plan = plan
+
+        
+    def save_competition(self):
+        Competition.all_competitions.append(self)
