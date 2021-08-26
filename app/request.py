@@ -11,11 +11,11 @@ base_url = 'http://api.football-data.org/v2/competitions/'
 def configure_request(app):
     global api_key,base_url
     api_key = '060161c1c7814b35b3f438c8580388a2'
-    base_url = 'http://api.football-data.org/v2/competitions/'
+    base_url = 'https://apiv3.apifootball.com/?action=get_countries&APIkey={}'
 
 
 def get_competition():
-    url = "http://api.football-data.org/v2/competitions/"
+    url = "https://apiv3.apifootball.com/?action=get_countries&APIkey=306537220f31131e7ffaa395a0a1f6869677028939925eaa1c8eb7532dfddcc8"
     response = requests.request("GET", url)
     
     print(response.text)
