@@ -29,14 +29,3 @@ class User(UserMixin,db.Model):
 
     def __repr__(self):
         return f'User{self.username}'
-
-
-class Country(db.Model):
-    __tablename__ = 'countries'
-
-    id = db.Column(db.Integer,primary_key = True)
-    country_id = db.Column(db.Integer,index=True)
-    country_name = db.Column(db.String(100),index=True)
-
-    def __repr__(self):
-        return f"Country('{self.country_name}'"

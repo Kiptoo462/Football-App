@@ -6,17 +6,21 @@
     <div class="container" style="text-align: center">
         <h1><b> Global Football </b></h1>
         <br>
-        <h4><i> *API stuff goes here..* </i></h4>
+        <hr>
+        <br>
+    </div>
+    <div class="container">
+        <h4><b> API Status </b></h4>
+        <p>{{macro.display_test(test_call)}}</p>
     </div>
     <br>
     <hr>
     <br>
     <div class="container">
-        <h3 style="text-align: center"> Database Status </h3>
+        <h2 style="text-align: center"><b> Available Leagues </b></h2>
         <br>
-        <hr>
         <br>
-        <p>{{macro.display_team(team)}}</p>
+        <p>{{macro.display_leagues(leagues)}}</p>
     </div>
 </div>
 {% endblock %}
