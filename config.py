@@ -6,8 +6,8 @@ class Config:
     SQLALCHEMY_DATABASE_URI = 'postgresql+psycopg2://oscar:123456789@localhost/global_football'
     SQLALCHEMY_TRACK_MODIFICATIONS = False
 
-    BASE_URL ='http://api.football-data.org/v2/competitions/'
-    FOOTBALL_API_KEY ='060161c1c7814b35b3f438c8580388a2'
+    BASE_URL ='https://apiv3.apifootball.com/?action=get_countries&APIkey={}'
+    FOOTBALL_API_KEY ='306537220f31131e7ffaa395a0a1f6869677028939925eaa1c8eb7532dfddcc8'
 
     MAIL_SERVER = 'smtp.googlemail.com'
     MAIL_PORT = 587

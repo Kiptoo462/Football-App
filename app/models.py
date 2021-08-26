@@ -3,6 +3,11 @@ from flask_login import UserMixin
 from werkzeug.security import generate_password_hash,check_password_hash
 from . import login_manager
 
+
+@login_manager.user_loader
+def loader_user(user_id):
+    return User.query.get(int(user_id))
+
 class User(UserMixin,db.Model):
     __tablename__="users"
     
@@ -22,25 +27,16 @@ class User(UserMixin,db.Model):
     def passwordVerification(self,password):
         return check_password_hash(self.encryptedpassword,password)
 
-
-    @login_manager.user_loader
-    
-    def loader_user(user_id):
-        return User.query.get(int(user_id))
-
     def __repr__(self):
         return f'User{self.username}'
 
 
-class Competition:
-    
-    all_competitions = []
-    
-    def __init__(self,id,name,plan):
-        self.id = id
-        self.name = name
-        self.plan = plan
+class Country(db.Model):
+    __tablename__ = 'countries'
 
-        
-    def save_competition(self):
-        Competition.all_competitions.append(self)
+    id = db.Column(db.Integer,primary_key = True)
+    country_id = db.Column(db.Integer,index=True)
+    country_name = db.Column(db.String(100),index=True)
+
+    def __repr__(self):
+        return f"Country('{self.country_name}'"

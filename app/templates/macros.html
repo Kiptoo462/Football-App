@@ -1,16 +1,5 @@
-{% macro displayCompetitionList(competition_object) %}
-  {% for competition in competition_object %}
-    <div class="container">
-      <hr>
-      <div class="container">
-        <div>
-          <b>{{competition.name}}</b>
-        </div>
-        <div>
-          <b>{{competition.plan}}</b>
-        </div>
-      </div>
-      <hr>
-    </div>
-  {% endfor %}
-{% endmacro %}
+{% macro display_team(team)%}
+<div class="container">
+    <h4>Name: {{team.team_name}}</h4>
+</div>
+{%endmacro%}
