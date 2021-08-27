@@ -32,16 +32,14 @@ def get_source_football(id):
      
 def process_results(football_list):
     '''
-    Function  that processes the news result and transform them to a list of Objects
+    Function  that processes the football result and transform them to a list of Objects
     Args:
         football_list: A list of dictionaries that contain football details
     Returns :
-        football_results: A list of news objects
+        football_results: A list of football objects
     '''
     football_results = []
     for football_item in football_list:
-        id = football_item.get('id')
-        author = football_item.get('author')
         title = football_item.get('title')
         description = football_item.get('description')
         url = football_item.get('url')
@@ -49,7 +47,7 @@ def process_results(football_list):
         pathToImage = football_item.get('urlToImage')
             
         if pathToImage:
-            football_object = Football(author,title,description,pathToImage,url,datePublished)
+            football_object = Football(title,description,pathToImage,url,datePublished)
             football_results.append(football_object)
     return football_results    
       

@@ -3,9 +3,9 @@ class Config:
     '''
     General configuration parent class
     '''
-    FOOTBALL_API_BASE_URL =''
+    FOOTBALL_API_BASE_URL ='https://app.sportdataapi.com/api/v1/soccer/leagues?apikey=e290fcb0-04a7-11ec-a142-2bb083c9845b&country_id=48'
     
-    SOURCES_API_BASE_URL =''
+    SOURCES_API_BASE_URL ='https://app.sportdataapi.com/api/v1/soccer/teams?apikey=e290fcb0-04a7-11ec-a142-2bb083c9845b&country_id=48'
     
     FOOTBALL_API_KEY = os.environ.get('FOOTBALL_API_KEY')
     
