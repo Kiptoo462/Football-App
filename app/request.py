@@ -1,17 +1,17 @@
 import urllib.request,json,http.client
-from .models import User
+from .models import User, Team, League, Player
 from datetime import datetime
 import requests
+import http.client
+import json
 
 today = datetime.today().strftime('%Y-%m-%d')
 
-api_key = '306537220f31131e7ffaa395a0a1f6869677028939925eaa1c8eb7532dfddcc8'
-base_url = 'https://apiv3.apifootball.com/?action=get_countries&APIkey={}'
 
 def configure_request(app):
     global api_key,base_url
-    api_key = '306537220f31131e7ffaa395a0a1f6869677028939925eaa1c8eb7532dfddcc8'
-    base_url = 'https://apiv3.apifootball.com/?action=get_countries&APIkey={}'
+    api_key = 'test85g57'
+    base_url = 'https://api.football-data-api.com/?key={}'
 
 
 def getTestCall():
@@ -22,35 +22,21 @@ def getTestCall():
 
 
 def getLeagues():
-    response = requests.get('https://api.football-data-api.com/league-list?key=test85g57')
-    if response.status_code == 200:
-        print(response.json())
-        return response.json()
-
-    
-def getCountries():
-    response = requests.get('https://api.football-data-api.com/country-list?key=test85g57')
+    response = requests.get('https://app.sportdataapi.com/api/v1/soccer/leagues?apikey=01437170-06ed-11ec-8721-6bf19042e66d')
     if response.status_code == 200:
         print(response.json())
         return response.json()
 
 
-def getPlayer():
-    response = requests.get('https://api.football-data-api.com/player?key=test85g57&player_id={}')
-    if response.status_code == 200:
-        print(response.json())
-        return response.json()
+# def getPlayer():
+#     response = requests.get('')
+#     if response.status_code == 200:
+#         print(response.json())
+#         return response.json()
 
 
-def getTeam():
-    response = requests.get('https://api.football-data-api.com/team?key=test85g57&team_id={}')
-    if response.status_code == 200:
-        print(response.json())
-        return response.json()
-
-
-def getEPLProfile():
-    response = requests.get('https://api.football-data-api.com/league-season?key=test85g57&id=161&season_id=2021')
-    if response.status_code == 200:
-        print(response.json())
-        return response.json()
+# def getTeam():
+#     response = requests.get('')
+#     if response.status_code == 200:
+#         print(response.json())
+#         return response.json()

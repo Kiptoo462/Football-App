@@ -4,7 +4,7 @@ from . import main
 from app import db
 from ..models import User
 import urllib.request
-from ..request import getTestCall, getLeagues, getCountries, getTeam, getPlayer
+from ..request import getTestCall
 from flask_wtf import FlaskForm
 from wtforms import StringField,SelectField,TextAreaField,SubmitField
 from wtforms.validators import Required
@@ -14,9 +14,9 @@ from wtforms.validators import Required
 @main.route('/')
 def index():
     test_call = getTestCall()
-    leagues = getLeagues()
-    #countries = getCountries()
+    #leagues = getLeagues()
+    #player = getPlayer()
 
     title="Home"
 
-    return render_template('index.html',title=title, test_call=test_call, leagues=leagues)
+    return render_template('index.html',title=title, test_call=test_call)

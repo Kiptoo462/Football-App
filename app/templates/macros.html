@@ -1,22 +1,12 @@
 {% macro display_test(test_call)%}
 <div class="container">
-    <h4>Test Call: {{test_call.success}}</h4>
-    <h4>Details: {{test_call.data}}</h4>
+    <h4><b>Test Call: </b>{{test_call.success}}</h4>
+    <h4><b>Details: </b>{{test_call.data}}</h4>
 </div>
 {%endmacro%}
 
-{% macro display_leagues(leagues)%}
-    <ul>
-    {% for league in leagues %}
-        <li>{{leagues.data.name}}</li>
-    {%endfor%}
-    </ul>
-{%endmacro%}
-
-{% macro display_countries(countries)%}
-    <ul>
-    {% for country in countries %}
-        <li>{{countries.data.name}}</li>
-    {%endfor%}
-    </ul>
+{% macro display_player(player)%}
+<div class="container">
+    <h4><b>Name: </b>{{player.fullName}}</h4>
+</div>
 {%endmacro%}

@@ -1,0 +1,22 @@
+{% extends 'base.html'%}
+
+{% block content %}
+
+<br>
+<h1 style="text-align:center"><b> {{ team.name}} </b></h1>
+<br>
+<hr>
+<br>
+<div class="container">
+    <div class="row">
+        <div class="container">
+            <h4><b>Name: </b><i>{{ team.name}}</i></h4>
+            <h4><b>Founded: </b><i>{{ team.founded}}</i></h4>
+            <h4><b>Address: </b><i>{{ team.address}}</i></h4>
+            <h4><b>Website: </b><i>{{ team.website}}</i></h4>
+        </div>
+    </div>
+</div>
+<hr>
+
+{% endblock %}

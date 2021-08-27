@@ -1,0 +1,21 @@
+{% extends 'base.html'%}
+
+{% block content %}
+
+<br>
+<h1 style="text-align:center"><b> {{ league.name}} </b></h1>
+<br>
+<hr>
+<br>
+<div class="container">
+    <div class="row">
+        <div class="container">
+            <h4><b>Name: </b><i>{{ league.name}}</i></h4>
+            <h4><b>Plan: </b><i>{{ league.plan}}</i></h4>
+            <h4><b>Last Updated: </b><i>{{ league.lastUpdated}}</i></h4>
+        </div>
+    </div>
+</div>
+<hr>
+
+{% endblock %}
