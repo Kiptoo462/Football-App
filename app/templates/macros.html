@@ -7,6 +7,12 @@
 
 {% macro display_player(player)%}
 <div class="container">
-    <h4><b>Name: </b>{{player.fullName}}</h4>
+    <h4><b>Name: </b><i>{{ player.name}}</i></h4>
+</div>
+{%endmacro%}
+
+{% macro display_team(team)%}
+<div class="container">
+    <h4><b>Name: </b><i>{{ team.name}}</i></h4>
 </div>
 {%endmacro%}

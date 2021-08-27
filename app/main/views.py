@@ -8,6 +8,7 @@ from ..request import getTestCall
 from flask_wtf import FlaskForm
 from wtforms import StringField,SelectField,TextAreaField,SubmitField
 from wtforms.validators import Required
+import requests
 
 
 @main.route('/home')
@@ -15,7 +16,7 @@ from wtforms.validators import Required
 def index():
     test_call = getTestCall()
     #leagues = getLeagues()
-    #player = getPlayer()
+    #player = getPlayer(id)
 
     title="Home"
 

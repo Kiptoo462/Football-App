@@ -31,41 +31,16 @@ class User(UserMixin,db.Model):
         return f'User{self.username}'
 
 
-
-class League:
-    __tablename__="leagues"
-    
-    all_leagues = []
-    
-    def __init__(self,id,name):
-        self.id = id
-        self.name = name
-        
-    def save_league(self):
-        League.all_leagues.append(self)
-
-
 class Team:
-    __tablename__="teams"
-    
-    all_teams = []
-    
+
     def __init__(self,id,name):
         self.id = id
         self.name = name
-        
-    def save_team(self):
-        Team.all_teams.append(self)
 
 
 class Player:
-    __tablename__="players"
-    
-    all_players = []
     
     def __init__(self,id,name):
         self.id = id
         self.name = name
         
-    def save_player(self):
-        Player.all_players.append(self)
